@@ -34,7 +34,7 @@ const ProductListRow = props => {
 let imageSource = require('../images/'+props.product.image); 
   return(
 
-  <li className="media" style ={{cursor:"pointer"}}>
+  <li className="media" onClick = {() => props.onProductSelected(props.product)} style ={{cursor:"pointer"}}>
 <div className="media-left">
 <a href="#">
 <img className="media-object" height="64" src={imageSource}></img>
@@ -57,8 +57,11 @@ componentDidMount(){
   this.props.getProducts();
 }
 
+onProductSelected(product){
+console.log(product); 
+}
   createProductListRow(products){
-     return this.props.products.map((p) =><ProductListRow product={p} key={p.id}/>);
+     return this.props.products.map((p) =><ProductListRow product={p} key={p.id} onProductSelected={this.onProductSelected}/>);
     }
 
   render(){
