@@ -2,6 +2,8 @@ import React from 'react';
 import {getProducts} from '../actions/products'; 
 import { connect } from 'react-redux'; 
 import { bindActionCreators } from 'redux'; 
+import { Router } from 'react-router-dom'; 
+import PropTypes from 'prop-types'; 
 /*
 const products = [
   {
@@ -53,12 +55,17 @@ const ProductTest = props =>{ return(
 
 
 class ProductList extends React.Component{
+  constructor(){
+    super(); 
+    this.onProductSelected = this.onProductSelected.bind(this); 
+  }
 componentDidMount(){
   this.props.getProducts();
 }
 
 onProductSelected(product){
 console.log(product); 
+this.context.router.history.push('/checkout');
 }
   createProductListRow(products){
      return this.props.products.map((p) =><ProductListRow product={p} key={p.id} onProductSelected={this.onProductSelected}/>);
@@ -79,5 +86,13 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch) =>{
 return bindActionCreators({getProducts}, dispatch);
 }
+/* Deprecated React.proptypes migrate to prop-types library 
+ProductList.contextTypes = {
+  router: React.PropTypes.object.isRequired
+}
+*/
 
+ProductList.contextTypes = {
+  router: PropTypes.object.isRequired,
+  }; 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList); 
