@@ -5,8 +5,9 @@ import {connect} from 'react-redux'
 class Checkout extends React.Component{
 
   render(){
-    console.log(this.props.selectedProduct);
-    return <div>Checkout Form</div>; 
+   // console.log(this.props.selectedProduct);
+    let name = this.props.selectedProduct ? this.props.selectedProduct.name : ''; 
+    return <div>Checkout:{name} </div>; 
   }
 }
 const mapStateToProps = (state)=>{
