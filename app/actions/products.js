@@ -8,3 +8,10 @@ export function getProducts(){
     payload
   }
 }
+
+export function selectProduct(product){
+  return{
+    type:'SELECT_PRODUCT',
+    payload: product
+  }
+}

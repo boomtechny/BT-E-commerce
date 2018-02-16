@@ -1,5 +1,5 @@
 import React from 'react';
-import {getProducts} from '../actions/products'; 
+import {getProducts, selectProduct} from '../actions/products'; 
 import { connect } from 'react-redux'; 
 import { bindActionCreators } from 'redux'; 
 import { Router } from 'react-router-dom'; 
@@ -64,7 +64,8 @@ componentDidMount(){
 }
 
 onProductSelected(product){
-console.log(product); 
+//console.log(product);
+this.props.selectProduct(product); 
 this.context.router.history.push('/checkout');
 }
   createProductListRow(products){
@@ -84,7 +85,7 @@ const mapStateToProps = (state)=>{
   return { products: state.products}; 
 }
 const mapDispatchToProps = (dispatch) =>{
-return bindActionCreators({getProducts}, dispatch);
+return bindActionCreators({getProducts, selectProduct}, dispatch);
 }
 /* Deprecated React.proptypes migrate to prop-types library 
 ProductList.contextTypes = {
