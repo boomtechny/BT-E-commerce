@@ -5,6 +5,6 @@ export default (props) => {
     <div className="page-header">
       <h1>BT Product Catalog</h1>
     </div>
-    <ProductList></ProductList>
+    <ProductList/>
   </div>;
 }

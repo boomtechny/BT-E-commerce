@@ -1,6 +1,8 @@
 import React from 'react';
-
-
+import {getProducts} from '../actions/products'; 
+import { connect } from 'react-redux'; 
+import { bindActionCreators } from 'redux'; 
+/*
 const products = [
   {
     id: 1,
@@ -27,15 +29,15 @@ const products = [
 image:require("../images/magiccircle.jpg")
 }
 ];
-
+*/
 const ProductListRow = props => {
-
+let imageSource = require('../images/'+props.product.image); 
   return(
 
   <li className="media" style ={{cursor:"pointer"}}>
 <div className="media-left">
 <a href="#">
-<img className="media-object" height="64" src={props.product.image}></img>
+<img className="media-object" height="64" src={imageSource}></img>
 </a>
 </div>
 <div className="media-body">
@@ -49,18 +51,30 @@ const ProductTest = props =>{ return(
 <div className = {props.title}>{props.title}</div>);
 */
 
-}
-export default class ProductList extends React.Component{
 
+class ProductList extends React.Component{
+componentDidMount(){
+  this.props.getProducts();
+}
 
   createProductListRow(products){
-     return products.map((p) =><ProductListRow product={p} key={p.id}/>);
+     return this.props.products.map((p) =><ProductListRow product={p} key={p.id}/>);
     }
-    
+
   render(){
 return <ul className="media-list">
-{this.createProductListRow(products)}
+{this.createProductListRow(this.props.products)}
 
 
 </ul>;
   }
+} 
+
+const mapStateToProps = (state)=>{
+  return { products: state.products}; 
+}
+const mapDispatchToProps = (dispatch) =>{
+return bindActionCreators({getProducts}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList); 
