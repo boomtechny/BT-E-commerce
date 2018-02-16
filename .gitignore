@@ -12,3 +12,6 @@ jspm_packages/
 
 # Bower dependency directory (https://bower.io/)
 bower_components
+
+# Yarn Integrity file
+.yarn-integrity
