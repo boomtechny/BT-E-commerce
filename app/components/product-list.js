@@ -61,6 +61,7 @@ class ProductList extends React.Component{
   }
 componentDidMount(){
   this.props.getProducts();
+
 }
 
 onProductSelected(product){

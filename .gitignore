@@ -15,3 +15,8 @@ bower_components
 
 # Yarn Integrity file
 .yarn-integrity
+
+# misc
+.DS_Store
+config/
+constants

@@ -1,8 +1,8 @@
 import React from 'react'; 
 import {connect} from 'react-redux';
-import {reduxForm, Field, validate} from 'redux-form';
-
-
+import {reduxForm, Field} from 'redux-form';
+import { bindActionCreators } from 'redux'; 
+import {completeCheckout} from '../actions/products'; 
 
 const input= ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
@@ -26,13 +26,31 @@ const form = e.target;
 const fields = [form.street,form.floorapt, form.city,form.state, form.postal, form.cardname, form.card,form.exp,form.cvc];
 const isValid = fields.every((f)=>(f.value)); 
 if(isValid){
-  console.log("Form is valid!!!"); 
+ 
+  const split_exp = form.exp.value.split("-"); //Stripe wants infomation in the format "2016-05"
+  const payment = {
+    number:form.card.value,
+    exp_month:split_exp[1],
+    exp_year: split_exp[0],
+    cvc:form.cvc.value
+  }
+  const address = {
+    street: form.street.value,
+    city: form.city.value, 
+    state: form.state.value, 
+    postal: form.postal.value, 
+  }
+  this.props.completeCheckout(this.props.selectedProduct, address, payment);
+}
+}
 
-}
-else{
-  console.log("Form is not valid"); 
-}
-}
+ // console.log("Form is valid!!!"); 
+
+
+//else{
+  //console.log("Form is not valid"); 
+//}
+
 //for(var i = 0; fields.length; i++){
  // console.log(fields[i].value); 
 //}
@@ -116,9 +134,13 @@ const mapStateToProps = (state)=>{
   return { selectedProduct: state.selectedProduct}; 
 }
 
+const mapDispatchToProps = (dispatch) =>{
+  return bindActionCreators({completeCheckout}, dispatch);
+  }
+
 
 export default reduxForm({
   form:'Checkout',
  // validate:(values) => {const {street,floorapt,city,state,postal,cardname,card,exp,cvc} = values; if(!street&&!floorapt&&!city&&!state&&!postal&&!cardname&&!card&&!exp&&!cvc){console.log('Form is not valid');}else{console.log('Form is valid');} return false; }
  // fields:['street', 'floorapt','city', 'state', 'postal', 'cardname','card','exp','cvc']
-})(connect(mapStateToProps)(Checkout)); 
+})(connect(mapStateToProps, mapDispatchToProps)(Checkout)); 

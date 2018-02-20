@@ -2,6 +2,8 @@ import React from 'react';
 import ProductList from 'components/product-list.js';
 import Checkout from 'components/checkout';
 import {  Route, Switch } from 'react-router-dom'; 
+
+
 export default (props) => {
   return <div className="container">
     <div className="page-header">
