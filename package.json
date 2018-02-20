@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "release": "./make_release.sh"
   },
   "keywords": [],
   "author": "Kelly Martinez boomtechny.com",
@@ -24,6 +25,7 @@
     "babel-preset-react": "^6.24.1",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.11.1",
     "prop-types": "^15.6.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
