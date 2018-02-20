@@ -40,7 +40,14 @@ if(isValid){
     state: form.state.value, 
     postal: form.postal.value, 
   }
-  this.props.completeCheckout(this.props.selectedProduct, address, payment);
+  this.props.completeCheckout(this.props.selectedProduct, address, payment).then((action) =>{
+    if(action.error){
+      alert(action.payload.message); 
+    }
+    else{
+      alert("Your purchase was successful"); 
+    }
+  });
 }
 }
 
