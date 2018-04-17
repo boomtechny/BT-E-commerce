@@ -65,17 +65,17 @@ a {
 
 .header{
     display: flex;
-    width: 100%;
-    margin: auto;
+  padding-left:5rem; 
+  padding-right:5rem; 
+  padding-top:1rem; 
+  padding-bottom:1rem; 
+  justify-content:space-between; 
   background:#ec33c3;
+ 
 }
 
 
-.header_logo{
-width:20rem; 
-height:100%; 
-margin:auto; 
-}
+
 
 .media-left{
   width:100%; 
@@ -107,11 +107,13 @@ margin:auto;
 }
 h4{
   margin-top:1rem; 
- 
+ width:80%; 
   text-align:center; 
   text-transform:uppercase; 
   font-family: 'Nunito', sans-serif; 
   font-weight:700; 
+  margin-left:auto; 
+  margin-right:auto;
 }
 .media-list span{
   display:flex; 
@@ -151,4 +153,42 @@ margin-top:1rem;
 button{
   background-color: #D81B60 !important;
    border-color: #D81B60 !important;
+}
+
+.header_shopcart{
+
+width:auto; 
+height:4rem;  
+align-self:center; 
+padding-right:4rem; 
+}
+.logo_wrapper{
+  display:flex; 
+  flex-direction:row; 
+  padding-left:17rem; 
+}
+.header_logo{
+  width:auto; 
+  height:5rem; 
+  justify-self:flex-start; 
+}
+.cart_wrapper{
+  display:flex; 
+  flex-direction:row; 
+ 
+  padding-right:17rem; 
+}
+
+
+.price_tag{
+  font-size:1.75rem; 
+  color: #00DB03; 
+  background:#D81B60; 
+font-weight:500; 
+margin-top:1rem !important; 
+
+}
+
+.price_tag:nth-of-type(3){
+margin-top:2rem !important; 
 }

@@ -10,7 +10,7 @@ export default (props) => {
     return <div className = "body_container"> 
     <div className = "header_wrapper">
         <div className = "header">
-        <img className = "header_logo" src="https://s3.amazonaws.com/boomtechny/web/logo.png"/>
+        <div className = "logo_wrapper"><img className = "header_logo" src="https://s3.amazonaws.com/boomtechny/web/logo.png"/></div><div className="cart_wrapper"><img className = "header_shopcart" src = "https://s3.amazonaws.com/boomtechny/web/shopcart_icon.png"/></div>
 </div>
 </div>
 <div className = "container">

@@ -45,6 +45,8 @@ let imageSource = require('../images/'+props.product.image);
 <div className="media-body">
 <h4 className="media=heading">{props.product.name}</h4>
 <span>{props.product.description}</span>
+
+<span className="price_tag">$15</span>
 </div>
   </li>);
 }
