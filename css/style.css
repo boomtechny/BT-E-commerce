@@ -122,7 +122,7 @@ margin: 0 auto;
 
 
 .body_container{
-  background:linear-gradient(to top, rgba(78,247,52,0.2) 0%, rgba(209,23,209,0.25) 100%), url(../app/images/background.png); 
+  background:linear-gradient(to top, rgba(78,247,52,0.2) 0%, rgba(209,23,209,0.25) 100%), url(https://s3.amazonaws.com/boomtechny/web/background.png); 
   background-repeat:repeat; 
   background-position:center; 
   width:100%; 
