@@ -18,5 +18,3 @@ bower_components
 
 # misc
 .DS_Store
-config/
-constants
