@@ -1,0 +1,154 @@
+/*---------------------------------------*/
+
+
+/* Base */
+
+
+/*---------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    color: rgb(59, 59, 59);
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: ' .';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+.row {
+    max-width: 1140px;
+    ;
+    margin: 0 auto;
+}
+
+section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 80px 0;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    margin: auto;
+  background:#ec33c3;
+}
+
+
+.header_logo{
+width:20rem; 
+height:100%; 
+margin:auto; 
+}
+
+.media-left{
+  width:100%; 
+  display:flex; 
+  justify-content:center; 
+}
+
+.media-list{
+  margin-top: 2rem; 
+ display:grid; 
+ grid-template-columns:1fr 1fr 1fr; 
+}
+.media{
+  display:flex; 
+  flex-direction:column; 
+width:100%;
+
+margin-left:1rem; 
+margin-right:1rem; 
+margin-top:1rem; 
+
+}
+
+.media-list img{
+margin:auto; 
+  width:15rem; 
+  height: 100%; 
+  display:flex; 
+}
+h4{
+  margin-top:1rem; 
+ 
+  text-align:center; 
+  text-transform:uppercase; 
+  font-family: 'Nunito', sans-serif; 
+  font-weight:700; 
+}
+.media-list span{
+  display:flex; 
+  width:80%; 
+  justify-content:center; 
+margin: 0 auto; 
+}
+
+
+.body_container{
+  background:linear-gradient(to top, rgba(78,247,52,0.2) 0%, rgba(209,23,209,0.25) 100%), url(../app/images/background.png); 
+  background-repeat:repeat; 
+  background-position:center; 
+  width:100%; 
+  display:flex; 
+  flex-direction:column; 
+  margin:auto; 
+   
+}
+
+
+h1{
+  text-transform:uppercase; 
+  text-align:center; 
+color: #D81B60;
+font-weight:700; 
+margin-top:1rem; 
+
+}
+
+
+
+
+.content{
+  margin-bottom:5rem; 
+}
+button{
+  background-color: #D81B60 !important;
+   border-color: #D81B60 !important;
+}
